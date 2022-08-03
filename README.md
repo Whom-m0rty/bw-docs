@@ -438,7 +438,13 @@ delta - может принимать значения: "day" / "week" / "mouth"
 ## /api/statistics/bot/{id}/
 ### GET
 ```json
-{"paid_orders": 0, "sold_in_total": 0, "sold_for_a_total_of": 0}
+{
+    "paid_orders": 1,
+    "sold_in_total": 11,
+    "sold_for_a_total_of": "100.00",
+    "active_users": 1,
+    "all_users": 2
+}
 ```
 
 ## api/order/last/{shop_id}/
