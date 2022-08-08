@@ -219,6 +219,26 @@
     "display_item_quantity": false
 }
 ```
+### GET
+```json
+{
+    "shop": 2,
+    "language": 1,
+    "title": "Тестовый бот",
+    "currency": 1,
+    "display_item_out_of_stock": false,
+    "display_item_quantity": false,
+    "currency_display": "Рубли ₽",
+    "language_display": "Русский",
+    "id": 1,
+    "shop_owner_username": "whomLZT",
+    "is_owner": true,
+    "is_locked": false,
+    "created_at": "2022-05-17T22:27:32.983278Z",
+    "active_users": 1,
+    "all_users": 2
+}
+```
 ---
 ## /api/bot/create/
 ### POST
@@ -239,6 +259,7 @@
 Extend - продолжает категорию
 Extend - null - корневая категория
 
+В примере shop_id = 5
 ```json
 [
     {
@@ -265,7 +286,19 @@ Extend - null - корневая категория
     "shop": 5,
     "title": "123213123",
     "extend": null,
-    "extend_title": null
+    "extend_title": null,
+    "is_hidden": false
+}
+```
+### GET
+```json
+{
+    "id": 1,
+    "shop": 5,
+    "title": "123213123",
+    "extend": null,
+    "extend_title": null,
+    "is_hidden": false
 }
 ```
 ---
@@ -431,11 +464,15 @@ delta - может принимать значения: "day" / "week" / "mouth"
 ---
 ## /api/statistics/shop/{id}/
 ### GET
+
+В примере id = 2
 ```json
 {"paid_orders": 1, "sold_in_total": 2, "sold_for_a_total_of": "110"}
 ```
 
 ## /api/statistics/bot/{id}/
+
+В примере id = 1
 ### GET
 ```json
 {
@@ -449,6 +486,8 @@ delta - может принимать значения: "day" / "week" / "mouth"
 
 ## api/order/last/{shop_id}/
 ### GET
+
+В примере id = 2
 ```json
 [
     {
@@ -468,6 +507,8 @@ delta - может принимать значения: "day" / "week" / "mouth"
 
 ## api/order/list/{shop_id}/
 ### GET
+
+В примере id = 2
 ```json
 [
     {
@@ -522,6 +563,7 @@ delta - может принимать значения: "day" / "week" / "mouth"
 
 ## api/user/list/{bot_id}/
 ### GET
+В примере bot_id = 1
 ```json
 [
     {
@@ -530,12 +572,20 @@ delta - может принимать значения: "day" / "week" / "mouth"
         "chat_id": 415924423,
         "username": null,
         "is_active": true
+    },
+    {
+        "user": 4,
+        "is_banned": false,
+        "chat_id": 5316965624,
+        "username": null,
+        "is_active": false
     }
 ]
 ```
 
-## api/product/list/<int:shop_id>/
+## api/product/list/<shop_id>/
 ### GET
+В примере shop_id = 2
 ```json
 [
     {
@@ -553,8 +603,9 @@ delta - может принимать значения: "day" / "week" / "mouth"
 ]
 ```
 
-## api/product/update/<int:product_id>/
+## api/product/update/<product_id>/
 ### GET
+в примере id = 1
 ```json
 {
     "id": 1,
