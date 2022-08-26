@@ -582,6 +582,56 @@ delta - может принимать значения: "day" / "week" / "mouth"
     }
 ]
 ```
+## api/user/list/{bot_id}/
+### GET
+response:
+```json
+[
+  {
+    "user":2,
+    "is_banned":false,
+    "chat_id":123,
+    "username":"whom",
+    "is_active":true
+  }
+]
+```
+
+## api/user/send_message/<int:user_id>/
+### POST
+request 
+message = "Сообщение пользователю"
+
+response
+Удачно
+```json
+{"success": true}
+```
+Ошибки
+```json
+{
+  "success": false, 
+  "error": "Пользователь заблокирован"
+}
+```
+```json
+{
+  "success": false,
+  "error": "Пользователь заблокировал бота!"
+}
+```
+```json
+{
+  "success": false,
+  "error": "Пользователь не найден!"
+}
+```
+```json
+{
+  "success": false,
+  "error": "Сообщение не передано!"
+}
+```
 
 ## api/product/list/<shop_id>/
 ### GET
