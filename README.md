@@ -148,6 +148,12 @@
 }
 ```
 Иначе:
+
+Категории:
+1 = 'Аккаунты'
+2 = 'Еда' 
+0 = 'Другое'
+
 ```json
 {
     "id": 2,
@@ -155,13 +161,20 @@
     "created_at": "2022-03-27T14:01:21Z",
     "is_locked": false,
     "owner_username": "whomLZT",
-    "is_owner": true
+    "is_owner": true,
+    "category": 1
 }
 ```
 ### PUT or PATCH
 Передача магазина другому пользователю.
 ```json
 {"owner": 1}
+```
+
+### PUT or PATCH
+Изменение категории 
+```json
+{"category": 2}
 ```
 ---
 ## /api/bot/list/
@@ -216,7 +229,9 @@
     "title": "Новый бот",
     "currency": 1,
     "display_item_out_of_stock": false,
-    "display_item_quantity": false
+    "display_item_quantity": false,
+    "token": "2095237739:AAF_3QyjhSVgiKGMtchDzQA1BiBNEI4321M"
+
 }
 ```
 ### GET
@@ -242,15 +257,18 @@
 ---
 ## /api/bot/create/
 ### POST
-Создание магазина(нужно заполнять поля при создании)
+Создание бота(нужно заполнять поля при создании)
+
+Может возникнуть ошибка валидации токена!!!!
 ```json
 {
     "shop": 2,
     "language": 1,
-    "title": "Новый магазин",
+    "title": "Новый бот",
     "currency": 2,
     "display_item_out_of_stock": false,
-    "display_item_quantity": false
+    "display_item_quantity": false,
+    "token": "2095237739:AAF_3QyjhSVgiKGMtchDzQA1BiBNEI4321M"
 }
 ```
 ---
