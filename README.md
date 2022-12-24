@@ -138,7 +138,7 @@
 ```
 ---
 ## /api/shop/update/{id}/
-### GET
+### GET or PUT or POST or DELETE
 Детальная информация о магазине. 
 
 Если у пользователя недостаточно прав для редактирования:<br> для примера - id: 4
@@ -220,7 +220,7 @@
 ```
 ---
 ## /api/bot/update/{id}/
-### PATCH or PUT
+### PATCH or PUT or DELETE
 Используется для изменения принадлежности бота к магазину и настроек валюты и языка бота.
 ```json
 {
@@ -297,7 +297,7 @@ Extend - null - корневая категория
 ]
 ```
 ## api/category/update/{id}/
-### PUT or PATCH
+### PUT or PATCH or DELETE
 ```json
 {
     "id": 1,
