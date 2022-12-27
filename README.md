@@ -677,13 +677,17 @@ response
 ```json
 {
     "id": 1,
-    "title": "Тестовый товар",
-    "shop": 2,
+    "title": "Укажите название товара.",
+    "shop": 1,
     "type": "Строковый (Цифровой)",
-    "category": 6,
-    "category_title": "12321312312 whom 12",
+    "category": null,
+    "category_title": null,
     "quantity": 1,
-    "strings": "123"
+    "strings": "123123123",
+    "price": "100.00",
+    "is_hidden": false,
+    "message_after_purchase": "123123",
+    "description": "Описание товара"
 }
 ```
 
