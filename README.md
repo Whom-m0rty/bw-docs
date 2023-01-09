@@ -567,6 +567,30 @@ delta - может принимать значения: "day" / "week" / "mouth"
 ]
 ```
 
+## api/order/update/<int:pk>/
+### GET
+в примере pk=1
+```json
+{
+    "id": 1,
+    "user_username": "whomLZT",
+    "product_title": "Укажите название товара.",
+    "product_type": 1,
+    "status": 2,
+    "amount": "1.00",
+    "quantity": 1,
+    "strings": "123123",
+    "address": "Не указан",
+    "full_name": "Не указано",
+    "mail_address": "Не указан",
+    "phone_number": "Не указан",
+    "created_at": "2022-03-03T14:38:25Z",
+    "paid_at": "2022-03-03T14:38:25Z",
+    "shop_title": "12312312"
+}
+```
+
+
 ## api/user/me/
 ### GET
 ```json
@@ -614,6 +638,29 @@ response:
   }
 ]
 ```
+## api/user/update/<int:bot_id>/<int:pk>/
+### GET
+
+```json
+{
+    "user": 2,
+    "is_banned": false,
+    "chat_id": null,
+    "username": null,
+    "is_active": true,
+    "created_at": "2022-08-26T20:36:13Z",
+    "balance": "0.00"
+}
+```
+### PUT
+```json
+{
+    "is_banned": true,
+    "balance": "0.00"
+}
+```
+
+
 
 ## api/user/send_message/<int:user_id>/
 ### POST
@@ -687,7 +734,8 @@ response
     "price": "100.00",
     "is_hidden": false,
     "message_after_purchase": "123123",
-    "description": "Описание товара"
+    "description": "Описание товара",
+    "created_at": "2023-01-09T15:44:47.279561Z"
 }
 ```
 
